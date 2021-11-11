@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Kitab';
+    src: url("//cdn.alquran.cloud/public/fonts/Kitab-Regular.ttf");
+}
+
+.font-kitab {
+    font-family: 'Kitab';
+}
+
+.style-ayah {
+    font-size: 40px;
+    
+}
+
+.style-ayah20 {
+    font-size: 20px;
+
+}
+
+.ayahBox1,
+.ayahBox2 {
+    padding      : 10px 5px 10px 10px;
+    border-bottom: 1px dotted #D4D4D4;
+}
+
+.ayahBox1 {
+    background-color: #fafaed;
+}
+
+.ayahBox2 {
+    background-color: #fff;
+}
+
+div {
+    display: block;
+}
+body {
+   
+   
+    background:url(bg4.png); 
+    background-attachment: fixed; 
+    background-size: 100%; 
+    background-position: center center;
+}
+
+.container {
+    background-color: #e6e4fc;
+
+}
+
+#selector{
+    margin-top: 20px;
+}
+div.sticky {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: green;
+    border: 2px solid #4CAF50;
+  }
+  .hidden{
+    display: none;
+  }
+
+  .audio{
+    margin-top: 13px;
+  }
+  #surahTable{
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /**var array=[];
+  setTimeout(async () => {
+    array=[];
+    for (i = 0; i < ayahsLength; i++) {
+        const sesponse1 = await fetch("http://api.alquran.cloud/v1/ayah/" + surahNumber + ":" + (i+1));//Audio
+        const data1 = await sesponse1.json();
+        var ayahNumber = data1.data.number;
+        srcAudio = "https://cdn.islamic.network/quran/audio/128/ar.alafasy/" + ayahNumber + ".mp3";
+        array.push(srcAudio);
+        $('#audio'+i).empty().append('<source src="'+array[i]+'" type="audio/mpeg"></source>');
+    }
