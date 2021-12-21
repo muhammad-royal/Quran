@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://icono-49d6.kxcdn.com/icono.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <title>Taratel</title>
@@ -13,174 +14,299 @@
 
 
 
-<body>
+<body onclick="testTest(event)">
 
 
 
-    <div id="header" class="font-kitab style-ayah" style="padding: 29px 29px 29px 29px;">
-        <div id="sticky">
+    <div id="header" class="font-kitab" style=" font-size: 40px; padding: 29px 29px 29px 29px;">
+        <div style="display: inline;">
             الْقُرْآن الْكَرِيْم
         </div>
-        <div id="sticky">
-            <input class="form-control d-inline-block" id="myInput" type="text"
-                style="margin-top:13px; margin-bottom:13px;" placeholder="Search..">
+
+        <div id="selector">
+
+
+
+            <select type='button' id="selectTafser" class="form-select form-select-lg mb-3 btn" style="font-size: 20px;"
+                aria-label=".form-select-lg example" onchange="Tafser181()">
+                <option selected value="1">التفسير الميسر</option>
+                <option value="2">تفسير الجلالين</option>
+                <option value="3">تفسير السعدي</option>
+                <option value="4">تفسير ابن كثير</option>
+                <option value="5">تفسير الوسيط لطنطاوي</option>
+                <option value="6">تفسير البغوي</option>
+                <option value="7">تفسير القرطبي</option>
+                <option value="8">تفسير الطبري</option>
+                <option value="9">Arberry</option>
+                <option value="10">Yusuf Ali</option>
+                <option value="11">Keyzer</option>
+                <option value="12">Leemhuis</option>
+                <option value="13">Siregar</option>
+
+
+
+            </select>
+            <select type='button' id="selectMuratel" class="form-select form-select-lg mb-3 btn" style="font-size:20px;"
+                aria-label=".form-select-lg example" onchange="Audio101(this.value)">
+                <option value="ar.ahmedajamy">أحمد العجمي Ahmed Ajamy</option>
+                <option selected value="ar.alafasy">العفاسي Al-afasy</option>
+                <option value="ar.hudhaify">الحذيفي Hudhaify</option>
+                <option value="ar.husary">الحصري Husary</option>
+                <option value="ar.husarymujawwad">الحصري مجود Husary Mujawwad</option>
+                <option value="ar.mahermuaiqly">ماهر المعيقلي Maher Al-muaiqly</option>
+                <option value="ar.minshawi">المنشاوي Minshawi</option>
+                <option value="ar.minshawimujawwad">المنشاوي مجود Minshawi Mujawwad</option>
+                <option value="ar.muhammadayyoub">محمد أيوب Muhammad Ayyoub</option>
+                <option value="ar.muhammadjibreel">محمد جبريل Muhammad Jibreel</option>
+                <option value="ar.shaatree">الشاطري Al-shaatree</option>
+                <option value="ar.abdulbasitmurattal">عبد الباسط مرتل Abdulbasit Murattal</option>
+                <option value="ar.abdullahbasfar">عبد الله بصفر Abdullah Basfar</option>
+                <option value="ar.abdurrahmaansudais">عبد الرحمن السديس Abdurrahmaan Sudais</option>
+                <option value="ar.aymanswoaid">أيمن سويد Ayman Swoaid</option>
+                <option value="ar.hanirifai">هاني الرفاعي Hani Al-rifai</option>
+                <option value="ar.saoodshuraym">سعود الشريم Saood Shuraym</option>
+
+
+            </select>
+            <select type='button' id="select" class="form-select form-select-lg mb-3 btn" style="font-size: 20px;"
+                aria-label=".form-select-lg example" onchange="Surah1(this.value)">
+                <option> إختر السورة</option>
+                <option value="1">1 - سُورَةُ ٱلْفَاتِحَةِ Al-Faatiha</option>
+                <option value="2">2 - سُورَةُ البَقَرَةِ Al-Baqara</option>
+                <option value="3">3 - سُورَةُ آلِ عِمۡرَانَ Aal-i-Imraan</option>
+                <option value="4">4 - سُورَةُ النِّسَاءِ An-Nisaa</option>
+                <option value="5">5 - سُورَةُ المَائـِدَةِ Al-Maaida</option>
+                <option value="6">6 - سُورَةُ الأَنۡعَامِ Al-An'aam</option>
+                <option value="7">7 - سُورَةُ الأَعۡرَافِ Al-A'raaf</option>
+                <option value="8">8 - سُورَةُ الأَنفَالِ Al-Anfaal</option>
+                <option value="9">9 - سُورَةُ التَّوۡبَةِ At-Tawba</option>
+                <option value="10">10 - سُورَةُ يُونُسَ Yunus</option>
+                <option value="11">11 - سُورَةُ هُودٍ Hud</option>
+                <option value="12">12 - سُورَةُ يُوسُفَ Yusuf</option>
+                <option value="13">13 - سُورَةُ الرَّعۡدِ Ar-Ra'd</option>
+                <option value="14">14 - سُورَةُ إِبۡرَاهِيمَ Ibrahim</option>
+                <option value="15">15 - سُورَةُ الحِجۡرِ Al-Hijr</option>
+                <option value="16">16 - سُورَةُ النَّحۡلِ An-Nahl</option>
+                <option value="17">17 - سُورَةُ الإِسۡرَاءِ Al-Israa</option>
+                <option value="18">18 - سُورَةُ الكَهۡفِ Al-Kahf</option>
+                <option value="19">19 - سُورَةُ مَرۡيَمَ Maryam</option>
+                <option value="20">20 - سُورَةُ طه Taa-Haa</option>
+                <option value="21">21 - سُورَةُ الأَنبِيَاءِ Al-Anbiyaa</option>
+                <option value="22">22 - سُورَةُ الحَجِّ Al-Hajj</option>
+                <option value="23">23 - سُورَةُ المُؤۡمِنُونَ Al-Muminoon</option>
+                <option value="24">24 - سُورَةُ النُّورِ An-Noor</option>
+                <option value="25">25 - سُورَةُ الفُرۡقَانِ Al-Furqaan</option>
+                <option value="26">26 - سُورَةُ الشُّعَرَاءِ Ash-Shu'araa</option>
+                <option value="27">27 - سُورَةُ النَّمۡلِ An-Naml</option>
+                <option value="28">28 - سُورَةُ القَصَصِ Al-Qasas</option>
+                <option value="29">29 - سُورَةُ العَنكَبُوتِ Al-Ankaboot</option>
+                <option value="30">30 - سُورَةُ الرُّومِ Ar-Room</option>
+                <option value="31">31 - سُورَةُ لُقۡمَانَ Luqman</option>
+                <option value="32">32 - سُورَةُ السَّجۡدَةِ As-Sajda</option>
+                <option value="33">33 - سُورَةُ الأَحۡزَابِ Al-Ahzaab</option>
+                <option value="34">34 - سُورَةُ سَبَإٍ Saba</option>
+                <option value="35">35 - سُورَةُ فَاطِرٍ Faatir</option>
+                <option value="36">36 - سُورَةُ يسٓ Yaseen</option>
+                <option value="37">37 - سُورَةُ الصَّافَّاتِ As-Saaffaat</option>
+                <option value="38">38 - سُورَةُ صٓ Saad</option>
+                <option value="39">39 - سُورَةُ الزُّمَرِ Az-Zumar</option>
+                <option value="40">40 - سُورَةُ غَافِرٍ Ghafir</option>
+                <option value="41">41 - سُورَةُ فُصِّلَتۡ Fussilat</option>
+                <option value="42">42 - سُورَةُ الشُّورَىٰ Ash-Shura</option>
+                <option value="43">43 - سُورَةُ الزُّخۡرُفِ Az-Zukhruf</option>
+                <option value="44">44 - سُورَةُ الدُّخَانِ Ad-Dukhaan</option>
+                <option value="45">45 - سُورَةُ الجَاثِيَةِ Al-Jaathiya</option>
+                <option value="46">46 - سُورَةُ الأَحۡقَافِ Al-Ahqaf</option>
+                <option value="47">47 - سُورَةُ مُحَمَّدٍ Muhammad</option>
+                <option value="48">48 - سُورَةُ الفَتۡحِ Al-Fath</option>
+                <option value="49">49 - سُورَةُ الحُجُرَاتِ Al-Hujuraat</option>
+                <option value="50">50 - سُورَةُ قٓ Qaaf</option>
+                <option value="51">51 - سُورَةُ الذَّارِيَاتِ Adh-Dhaariyat</option>
+                <option value="52">52 - سُورَةُ الطُّورِ At-Tur</option>
+                <option value="53">53 - سُورَةُ النَّجۡمِ An-Najm</option>
+                <option value="54">54 - سُورَةُ القَمَرِ Al-Qamar</option>
+                <option value="55">55 - سُورَةُ الرَّحۡمَٰن Ar-Rahmaan</option>
+                <option value="56">56 - سُورَةُ الوَاقِعَةِ Al-Waaqia</option>
+                <option value="57">57 - سُورَةُ الحَدِيدِ Al-Hadid</option>
+                <option value="58">58 - سُورَةُ المُجَادلَةِ Al-Mujaadila</option>
+                <option value="59">59 - سُورَةُ الحَشۡرِ Al-Hashr</option>
+                <option value="60">60 - سُورَةُ المُمۡتَحنَةِ Al-Mumtahana</option>
+                <option value="61">61 - سُورَةُ الصَّفِّ As-Saff</option>
+                <option value="62">62 - سُورَةُ الجُمُعَةِ Al-Jumu'a</option>
+                <option value="63">63 - سُورَةُ المُنَافِقُونَ Al-Munaafiqoon</option>
+                <option value="64">64 - سُورَةُ التَّغَابُنِ At-Taghaabun</option>
+                <option value="65">65 - سُورَةُ الطَّلَاقِ At-Talaaq</option>
+                <option value="66">66 - سُورَةُ التَّحۡرِيمِ At-Tahrim</option>
+                <option value="67">67 - سُورَةُ المُلۡكِ Al-Mulk</option>
+                <option value="68">68 - سُورَةُ القَلَمِ Al-Qalam</option>
+                <option value="69">69 - سُورَةُ الحَاقَّةِ Al-Haaqqa</option>
+                <option value="70">70 - سُورَةُ المَعَارِجِ Al-Ma'aarij</option>
+                <option value="71">71 - سُورَةُ نُوحٍ Nooh</option>
+                <option value="72">72 - سُورَةُ الجِنِّ Al-Jinn</option>
+                <option value="73">73 - سُورَةُ المُزَّمِّلِ Al-Muzzammil</option>
+                <option value="74">74 - سُورَةُ المُدَّثِّرِ Al-Muddaththir</option>
+                <option value="75">75 - سُورَةُ القِيَامَةِ Al-Qiyaama</option>
+                <option value="76">76 - سُورَةُ الإِنسَانِ Al-Insaan</option>
+                <option value="77">77 - سُورَةُ المُرۡسَلَاتِ Al-Mursalaat</option>
+                <option value="78">78 - سُورَةُ النَّبَإِ An-Naba</option>
+                <option value="79">79 - سُورَةُ النَّازِعَاتِ An-Naazi'aat</option>
+                <option value="80">80 - سُورَةُ عَبَسَ Abasa</option>
+                <option value="81">81 - سُورَةُ التَّكۡوِيرِ At-Takwir</option>
+                <option value="82">82 - سُورَةُ الانفِطَارِ Al-Infitaar</option>
+                <option value="83">83 - سُورَةُ المُطَفِّفِينَ Al-Mutaffifin</option>
+                <option value="84">84 - سُورَةُ الانشِقَاقِ Al-Inshiqaaq</option>
+                <option value="85">85 - سُورَةُ البُرُوجِ Al-Burooj</option>
+                <option value="86">86 - سُورَةُ الطَّارِقِ At-Taariq</option>
+                <option value="87">87 - سُورَةُ الأَعۡلَىٰ Al-A'laa</option>
+                <option value="88">88 - سُورَةُ الغَاشِيَةِ Al-Ghaashiya</option>
+                <option value="89">89 - سُورَةُ الفَجۡرِ Al-Fajr</option>
+                <option value="90">90 - سُورَةُ البَلَدِ Al-Balad</option>
+                <option value="91">91 - سُورَةُ الشَّمۡسِ Ash-Shams</option>
+                <option value="92">92 - سُورَةُ اللَّيۡلِ Al-Lail</option>
+                <option value="93">93 - سُورَةُ الضُّحَىٰ Ad-Dhuhaa</option>
+                <option value="94">94 - سُورَةُ الشَّرۡحِ Ash-Sharh</option>
+                <option value="95">95 - سُورَةُ التِّينِ At-Tin</option>
+                <option value="96">96 - سُورَةُ العَلَقِ Al-Alaq</option>
+                <option value="97">97 - سُورَةُ القَدۡرِ Al-Qadr</option>
+                <option value="98">98 - سُورَةُ البَيِّنَةِ Al-Bayyina</option>
+                <option value="99">99 - سُورَةُ الزَّلۡزَلَةِ Az-Zalzala</option>
+                <option value="100">100 - سُورَةُ العَادِيَاتِ Al-Aadiyaat</option>
+                <option value="101">101 - سُورَةُ القَارِعَةِ Al-Qaari'a</option>
+                <option value="102">102 - سُورَةُ التَّكَاثُرِ At-Takaathur</option>
+                <option value="103">103 - سُورَةُ العَصۡرِ Al-Asr</option>
+                <option value="104">104 - سُورَةُ الهُمَزَةِ Al-Humaza</option>
+                <option value="105">105 - سُورَةُ الفِيلِ Al-Fil</option>
+                <option value="106">106 - سُورَةُ قُرَيۡشٍ Quraish</option>
+                <option value="107">107 - سُورَةُ المَاعُونِ Al-Maa'un</option>
+                <option value="108">108 - سُورَةُ الكَوۡثَرِ Al-Kawthar</option>
+                <option value="109">109 - سُورَةُ الكَافِرُونَ Al-Kaafiroon</option>
+                <option value="110">110 - سُورَةُ النَّصۡرِ An-Nasr</option>
+                <option value="111">111 - سُورَةُ المَسَدِ Al-Masad</option>
+                <option value="112">112 - سُورَةُ الإِخۡلَاصِ Al-Ikhlaas</option>
+                <option value="113">113 - سُورَةُ الفَلَقِ Al-Falaq</option>
+                <option value="114">114 - سُورَةُ النَّاسِ An-Naas</option>
+            </select>
         </div>
+        <div class="container" style="padding:50px 250px;">
+            <form role="form">
+                <div class="form-group">
+                    <input type="input" autocomplete="off" class="form-control input-lg" id="txt-search"
+                        placeholder="search" onfocus="lll(event,true)">
+                </div>
+            </form>
+            <div class="search-result" id="filter-records">
+                <div id="sura-block">
+                    <h4>السور</h4>
+                    <div id="sura-results">
+
+                    </div>
+                </div>
+                <div id="aya-block">
+                    <h4>
+                        <span>الآيات: </span>
+                        <span id="result-count"> </span>
+                        <span>نتيجة</span>
+                    </h4>
+                    <div id="aya-results">
+
+                    </div>
+                </div>
+                <div id="no-result">
+                    لا يوجد نتائج
+                </div>
+            </div>
+        </div>
+       
+        <button class="btn btn-brimary" style="position: fixed;
+        bottom: 50px;
+        left: 50px;
+        border-radius: 50%;
+        padding: 6px 20px 0px 20px;
+        font-size: 36px;" onclick="goUP()">⬆</button>
+
+
     </div>
-    <div class="container">
-        <div class="font-kitab style-ayah" style="text-align: center;padding: 29px 29px 29px 29px ; ">بِسْمِ ٱللّٰهِ
-            الرَّحْمٰنِ
-            الرَّحِيْمِ</div>
+    <div class="mainContainer container">
         <div>
-            <button class="btn btn-primary" onclick="showAudio()">Audio</button>
+            <div class="font-kitab" style="font-size:40px;text-align: center;padding: 29px 29px 29px 29px ; ">بِسْمِ
+                ٱللّٰهِ
+                الرَّحْمٰنِ
+                الرَّحِيْمِ
+            </div>
+
+
         </div>
         <div id="content">
-            <div id="selector">
 
-                <select class="form-select" size="5" aria-label="size 3 select example" onchange="Surah1(this.value)">
-                    <option> إختر السورة</option>
-                    <option value="1">سُورَةُ ٱلْفَاتِحَةِ</option>
-                    <option value="2">سُورَةُ البَقَرَةِ</option>
-                    <option value="3">سُورَةُ آلِ عِمۡرَانَ</option>
-                    <option value="4">سُورَةُ النِّسَاءِ</option>
-                    <option value="5">سُورَةُ المَائـِدَةِ</option>
-                    <option value="6">سُورَةُ الأَنۡعَامِ</option>
-                    <option value="7">سُورَةُ الأَعۡرَافِ</option>
-                    <option value="8">سُورَةُ الأَنفَالِ</option>
-                    <option value="9">سُورَةُ التَّوۡبَةِ</option>
-                    <option value="10">سُورَةُ يُونُسَ</option>
-                    <option value="11">سُورَةُ هُودٍ</option>
-                    <option value="12">سُورَةُ يُوسُفَ</option>
-                    <option value="13">سُورَةُ الرَّعۡدِ</option>
-                    <option value="14">سُورَةُ إِبۡرَاهِيمَ</option>
-                    <option value="15">سُورَةُ الحِجۡرِ</option>
-                    <option value="16">سُورَةُ النَّحۡلِ</option>
-                    <option value="17">سُورَةُ الإِسۡرَاءِ</option>
-                    <option value="18">سُورَةُ الكَهۡفِ</option>
-                    <option value="19">سُورَةُ مَرۡيَمَ</option>
-                    <option value="20">سُورَةُ طه</option>
-                    <option value="21">سُورَةُ الأَنبِيَاءِ</option>
-                    <option value="22">سُورَةُ الحَجِّ</option>
-                    <option value="23">سُورَةُ المُؤۡمِنُونَ</option>
-                    <option value="24">سُورَةُ النُّورِ</option>
-                    <option value="25">سُورَةُ الفُرۡقَانِ</option>
-                    <option value="26">سُورَةُ الشُّعَرَاءِ</option>
-                    <option value="27">سُورَةُ النَّمۡلِ</option>
-                    <option value="28">سُورَةُ القَصَصِ</option>
-                    <option value="29">سُورَةُ العَنكَبُوتِ</option>
-                    <option value="30">سُورَةُ الرُّومِ</option>
-                    <option value="31">سُورَةُ لُقۡمَانَ</option>
-                    <option value="32">سُورَةُ السَّجۡدَةِ</option>
-                    <option value="33">سُورَةُ الأَحۡزَابِ</option>
-                    <option value="34">سُورَةُ سَبَإٍ</option>
-                    <option value="35">سُورَةُ فَاطِرٍ</option>
-                    <option value="36">سُورَةُ يسٓ</option>
-                    <option value="37">سُورَةُ الصَّافَّاتِ</option>
-                    <option value="38">سُورَةُ صٓ</option>
-                    <option value="39">سُورَةُ الزُّمَرِ</option>
-                    <option value="40">سُورَةُ غَافِرٍ</option>
-                    <option value="41">سُورَةُ فُصِّلَتۡ</option>
-                    <option value="42">سُورَةُ الشُّورَىٰ</option>
-                    <option value="43">سُورَةُ الزُّخۡرُفِ</option>
-                    <option value="44">سُورَةُ الدُّخَانِ</option>
-                    <option value="45">سُورَةُ الجَاثِيَةِ</option>
-                    <option value="46">سُورَةُ الأَحۡقَافِ</option>
-                    <option value="47">سُورَةُ مُحَمَّدٍ</option>
-                    <option value="48">سُورَةُ الفَتۡحِ</option>
-                    <option value="49">سُورَةُ الحُجُرَاتِ</option>
-                    <option value="50">سُورَةُ قٓ</option>
-                    <option value="51">سُورَةُ الذَّارِيَاتِ</option>
-                    <option value="52">سُورَةُ الطُّورِ</option>
-                    <option value="53">سُورَةُ النَّجۡمِ</option>
-                    <option value="54">سُورَةُ القَمَرِ</option>
-                    <option value="55">سُورَةُ الرَّحۡمَٰن</option>
-                    <option value="56">سُورَةُ الوَاقِعَةِ</option>
-                    <option value="57">سُورَةُ الحَدِيدِ</option>
-                    <option value="58">سُورَةُ المُجَادلَةِ</option>
-                    <option value="59">سُورَةُ الحَشۡرِ</option>
-                    <option value="60">سُورَةُ المُمۡتَحنَةِ</option>
-                    <option value="61">سُورَةُ الصَّفِّ</option>
-                    <option value="62">سُورَةُ الجُمُعَةِ</option>
-                    <option value="63">سُورَةُ المُنَافِقُونَ</option>
-                    <option value="64">سُورَةُ التَّغَابُنِ</option>
-                    <option value="65">سُورَةُ الطَّلَاقِ</option>
-                    <option value="66">سُورَةُ التَّحۡرِيمِ</option>
-                    <option value="67">سُورَةُ المُلۡكِ</option>
-                    <option value="68">سُورَةُ القَلَمِ</option>
-                    <option value="69">سُورَةُ الحَاقَّةِ</option>
-                    <option value="70">سُورَةُ المَعَارِجِ</option>
-                    <option value="71">سُورَةُ نُوحٍ</option>
-                    <option value="72">سُورَةُ الجِنِّ</option>
-                    <option value="73">سُورَةُ المُزَّمِّلِ</option>
-                    <option value="74">سُورَةُ المُدَّثِّرِ</option>
-                    <option value="75">سُورَةُ القِيَامَةِ</option>
-                    <option value="76">سُورَةُ الإِنسَانِ</option>
-                    <option value="77">سُورَةُ المُرۡسَلَاتِ</option>
-                    <option value="78">سُورَةُ النَّبَإِ</option>
-                    <option value="79">سُورَةُ النَّازِعَاتِ</option>
-                    <option value="80">سُورَةُ عَبَسَ</option>
-                    <option value="81">سُورَةُ التَّكۡوِيرِ</option>
-                    <option value="82">سُورَةُ الانفِطَارِ</option>
-                    <option value="83">سُورَةُ المُطَفِّفِينَ</option>
-                    <option value="84">سُورَةُ الانشِقَاقِ</option>
-                    <option value="85">سُورَةُ البُرُوجِ</option>
-                    <option value="86">سُورَةُ الطَّارِقِ</option>
-                    <option value="87">سُورَةُ الأَعۡلَىٰ</option>
-                    <option value="88">سُورَةُ الغَاشِيَةِ</option>
-                    <option value="89">سُورَةُ الفَجۡرِ</option>
-                    <option value="90">سُورَةُ البَلَدِ</option>
-                    <option value="91">سُورَةُ الشَّمۡسِ</option>
-                    <option value="92">سُورَةُ اللَّيۡلِ</option>
-                    <option value="93">سُورَةُ الضُّحَىٰ</option>
-                    <option value="94">سُورَةُ الشَّرۡحِ</option>
-                    <option value="95">سُورَةُ التِّينِ</option>
-                    <option value="96">سُورَةُ العَلَقِ</option>
-                    <option value="97">سُورَةُ القَدۡرِ</option>
-                    <option value="98">سُورَةُ البَيِّنَةِ</option>
-                    <option value="99">سُورَةُ الزَّلۡزَلَةِ</option>
-                    <option value="100">سُورَةُ العَادِيَاتِ</option>
-                    <option value="101">سُورَةُ القَارِعَةِ</option>
-                    <option value="102">سُورَةُ التَّكَاثُرِ</option>
-                    <option value="103">سُورَةُ العَصۡرِ</option>
-                    <option value="104">سُورَةُ الهُمَزَةِ</option>
-                    <option value="105">سُورَةُ الفِيلِ</option>
-                    <option value="106">سُورَةُ قُرَيۡشٍ</option>
-                    <option value="107">سُورَةُ المَاعُونِ</option>
-                    <option value="108">سُورَةُ الكَوۡثَرِ</option>
-                    <option value="109">سُورَةُ الكَافِرُونَ</option>
-                    <option value="110">سُورَةُ النَّصۡرِ</option>
-                    <option value="111">سُورَةُ المَسَدِ</option>
-                    <option value="112">سُورَةُ الإِخۡلَاصِ</option>
-                    <option value="113">سُورَةُ الفَلَقِ</option>
-                    <option value="114">سُورَةُ النَّاسِ</option>
-                </select>
-            </div>
             <div class="row surahRow">
-                <div class="col-md-6 ltr" id="surahTable" >
+                <div class="col-md-6 ltr" id="surahTable">
 
                 </div>
 
             </div>
             <div>
-                <div class="font-kitab style-ayah" style="direction: rtl; margin-top: 13px;" id="verses">
+                <div id="verses" class="font-kitab style-ayah" style="direction: rtl; margin-top: 13px;">
                     <h1> ............ </h1>
-
-                </div>
-                <div>
 
                 </div>
 
             </div>
 
+            <div id="try">
+
+            </div>
 
 
 
             <img src=" ">
         </div>
+        
+
+
     </div>
+    <!-- <audio controls class="" style="margin-right: 100px; margin-top: 50px; " id="audio-808"
+        onended="nextAya()">
+        <source src="" type="audio/ogg">
+        <source src="" type="audio/mpeg">
+
+    </audio> -->
+
+      <div class="audio-player">
+        <div class="timeline">
+          <div class="progress"></div>
+        </div>
+        <div class="controls">
+          <div class="play-container">
+            <div class="toggle-play play">
+          </div>
+          </div>
+          <div class="time">
+            <div class="current">0:00</div>
+            <div class="divider">/</div>
+            <div class="length"></div>
+          </div>
+          <div class="name">Music Song</div>
+      <!--     credit for icon to https://saeedalipoor.github.io/icono/ -->
+          <div class="volume-container">
+            <div class="volume-button">
+              <div class="volume icono-volumeMedium"></div>
+            </div>
+            
+            <div class="volume-slider">
+              <div class="volume-percentage"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <button class="btn btn-secondary">Next</button>
+    <button class="btn btn-secondary">previous</button>
     <script src="jquery-3.5.1.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
     <script src="popper.js"></script>
+    <script src="ArabicText.js"></script>
     <script src="script.js"></script>
+
 
 
 
